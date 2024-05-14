@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class User extends Model {
+class User extends Model {//a child clase of whatever were extending
   // This instance method uses a conditional statement to check if a user has pets
-  hasPets() {
+  hasPets() {//define a function called has pets and using the key word ( if the number of pets in this userData is greating than 0 it will return true if not it will return false)
     if (this.numberOfPets > 0) {
       return true;
     } else {

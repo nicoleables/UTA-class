@@ -11,5 +11,5 @@ app.use(express.urlencoded({ extended: true }));
 
 // Connect to the database before starting the Express.js server
 sequelize.sync().then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening'));//this is the lin that starts our server
 });

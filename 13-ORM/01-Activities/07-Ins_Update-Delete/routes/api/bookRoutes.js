@@ -15,7 +15,7 @@ router.get('/:isbn', (req, res) => {
   Book.findOne(
     {
       // Gets the book based on the isbn given in the request parameters
-      where: { 
+      where: { //where using the isbn to search for a book
         isbn: req.params.isbn 
       },
     }
@@ -30,7 +30,7 @@ router.put('/:isbn', (req, res) => {
   Book.update(
     {
       // All the fields you can update and the data attached to the request body.
-      title: req.body.title,
+      title: req.body.title,//where passing every single value(even if it is not changed)(it is much easier to update the whole thing and it is a security thing)
       author: req.body.author,
       isbn: req.body.isbn,
       pages: req.body.pages,
@@ -54,13 +54,13 @@ router.put('/:isbn', (req, res) => {
 // Delete route for a book with a matching isbn
 router.delete('/:isbn', (req, res) => {
   // Looks for the books based on isbn given in the request parameters and deletes the instance from the database
-  Book.destroy({
+  Book.destroy({//this is our delete(destroy is really common)(it will delete the isbn)
     where: {
-      isbn: req.params.isbn,
+      isbn: req.params.isbn,//destroying the book that has a specific isbn value
     },
   })
     .then((deletedBook) => {
-      res.json(deletedBook);
+      res.json(deletedBook);//sending it back what was deleted
     })
     .catch((err) => res.json(err));
 });

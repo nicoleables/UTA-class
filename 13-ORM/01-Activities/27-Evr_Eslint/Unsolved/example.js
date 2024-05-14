@@ -21,4 +21,10 @@ result = num_1 / num_2;
 } else {
 alert("Not a valid option!");
 }
+//This helps everyone code the same way to read and understand everyones code faster it is called a linter
+//eslint is a library to enforce rules and has all the rules you have to follow
+//this is like styling for our code
+//it is looking at it throught dev dependences
+//vs code picks up thr rules and is enforcing you to follow by them
+//the eslintignore will ignore the node modules(ignore certain stuff)
 

@@ -21,11 +21,11 @@ License.init(
       defaultValue: true,
     },
     // This column will store a reference of the `id` of the `Driver` that owns this License
-    driver_id: {
+    driver_id: {//this is our foreign key
       type: DataTypes.INTEGER,
       references: {
         // This references the `driver` model, which we set in `Driver.js` as its `modelName` property
-        model: 'driver',
+        model: 'driver',//driver is the one on top
         key: 'id',
       },
     },

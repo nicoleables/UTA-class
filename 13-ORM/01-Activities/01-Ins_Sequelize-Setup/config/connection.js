@@ -1,13 +1,14 @@
 const Sequelize = require('sequelize');
+require('dotenv').config();//getting the enveroment variabke from the env file
 
 // Create a connection object
 const sequelize = new Sequelize(
   // Database name
-  'library_db',
+  process.env.DB_NAME,
   // User
-  'postgres',
+  process.env.DB_USER,
   // Password
-  'password',
+  process.env.DB_PASSWORD,
   {
     // Database location
     host: 'localhost',
@@ -16,3 +17,4 @@ const sequelize = new Sequelize(
 );
 
 module.exports = sequelize;
+//pg and sequelize have to be installed first in order for this to work

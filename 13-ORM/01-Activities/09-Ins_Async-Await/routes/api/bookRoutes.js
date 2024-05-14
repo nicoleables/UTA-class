@@ -2,10 +2,10 @@ const router = require('express').Router();
 const Book = require('../../models/Book');
 
 // Change the anonymous callback function to become Asynchronous
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => {//we cant not use awaite unless we establush our function as async
   // Store the bookData in a variable once the promise is resolved.
-  const bookData = await Book.findAll();
-
+  const bookData = await Book.findAll();//awaite must come with async(this is removing the purpose of the .then)
+//When findAll method is run it emeditly returns to you giving you a promise saying it will return the info later(instead of that with awaite we dont want the promise were just going to wait for it then move on)
   // Return the bookData promise inside of the JSON response
   return res.json(bookData);
 });

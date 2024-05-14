@@ -34,6 +34,18 @@ User.init(
   },
   {
     // TODO: Add hooks here
+    hooks: {
+      beforeCreate: async (userDate) => {
+        userData.password = await bcrypt.hash(userData.password, 10);
+        return userData;
+      },
+      befireUpdate: async (userData) => {
+        if(userData._changed.has("password")) {
+        userData.password = await bcrypt.hash(userData.password, 10);
+        }
+        return userData;
+      }
+    },
 
     sequelize,
     timestamps: false,
