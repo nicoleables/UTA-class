@@ -37,13 +37,13 @@ const dishes = [
 
 //get all dishes
 router.get('/', async (req, res) => {
-  res.render('all');
+  res.render('all');//render will fit everything together and display and reander a page based on what its given
 });
 
 //get one dish
 router.get('/dish/:num', async (req, res) => {
   // ? This method renders the 'dish' template, and uses params to select the correct dish to render in the template, based on the id of the dish.
-  return res.render('dish', dishes[req.params.num - 1]);
+  return res.render('dish', dishes[req.params.num - 1]);//You will have to do this a lot to translate what the user sees from you arrays are 0 based so for it to start at 1 for the user we have to do -1(it depends how tohe logic is set up sometimes)
 });
 
 module.exports = router;

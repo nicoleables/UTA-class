@@ -5,7 +5,9 @@ async function editFormHandler(event) {
   const guest_name = document.querySelector('#guest_name').value;
 
   // TODO: What will the value of has_nuts be if the box in the form is checked?
+  // true
   // TODO: What do we call this kind of operator?
+  // turnary operator, it begins with a condition followed by a question mark and two code blocks seperated by a ;
   const has_nuts = document.querySelector('#has_nuts:checked') ? true : false;
 
   // ? window.location gives us access to the URL. We then use the .split() method to access the number at the end of the URL and set that equal to id.
@@ -14,6 +16,7 @@ async function editFormHandler(event) {
   ];
 
   // TODO: What part of our application will handle this 'put' request?
+  // The controller will handler this 'put' request
   const response = await fetch(`/api/dish/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -28,6 +31,7 @@ async function editFormHandler(event) {
   });
 
   // TODO: What happens if the response is ok?
+  // it successfully updates the dish
   if (response.ok) {
     document.location.replace(`/dish/${id}`);
   } else {

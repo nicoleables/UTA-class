@@ -18,3 +18,5 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = router;
+//hasing is hidding the actually password it will print it out as a string of random stuff so nobody knows your password
+//in case your database gest accessed by someone else if will show them something random instead of the actually passwrod

@@ -21,11 +21,11 @@ Driver.init(
     },
   },
   {
-    sequelize,
-    timestamps: false,
+    sequelize,//pass connection
+    timestamps: false,//dont add time table
     freezeTableName: true,
-    underscored: true,
-    modelName: 'driver',
+    underscored: true,//multiple word to snakecase
+    modelName: 'driver',//name our table driver
   }
 );
 

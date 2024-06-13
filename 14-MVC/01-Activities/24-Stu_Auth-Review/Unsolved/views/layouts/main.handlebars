@@ -13,7 +13,8 @@
     <h1>
       User Registry
     </h1>
-    <!-- TODO: Add a comment describing the functionality of this helper -->
+    <!-- TODO: Add a comment describing the functionality of this helper 
+    ONly display the logout button if the user is loggin is-->
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
@@ -27,7 +28,8 @@
       
   </footer>
 
-  <!-- TODO: Add a comment describing the functionality of this helper -->
+  <!-- TODO: Add a comment describing the functionality of this helper 
+  if the user is logged in only inclue the script -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}

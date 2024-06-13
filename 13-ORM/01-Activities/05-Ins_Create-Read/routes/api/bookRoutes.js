@@ -3,6 +3,14 @@ const router = require('express').Router();
 // Import the model
 const Book = require('../../models/Book');
 
+router.get('/', (req, res) => {
+  Book.findAll().then((books) => {
+    res.jsom(books);
+}).catch((err) => {
+  res.json(err);
+});
+})
+
 // CREATE a book
 router.post('/', (req, res) => {
   // Use Sequelize's `create()` method to add a row to the table

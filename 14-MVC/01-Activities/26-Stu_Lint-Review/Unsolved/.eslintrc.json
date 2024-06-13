@@ -4,11 +4,13 @@
     "browser": true,
     "commonjs": true,
     "node": true,
-    "es6": true
+    "es6": true,
     // TODO: Add option to support ** operators
+    "es2017": true
   },
   "rules": {
     // TODO: Add rule to disallow setting variables to undefined
+    "no-undef-init": 'error',
     "no-duplicate-case": "error",
     "no-empty": "error",
     "no-extra-semi": "error",

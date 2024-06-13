@@ -52,7 +52,7 @@ const dishes = [
 
 // ? get all dishes
 router.get('/', async (req, res) => {
-  res.render('all', { dishes });
+  res.render('all', { dishes });//This is the whole dishes array(all 7)
 });
 
 // ? get one dish

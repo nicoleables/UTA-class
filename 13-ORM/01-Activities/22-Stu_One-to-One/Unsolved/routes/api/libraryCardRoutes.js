@@ -38,6 +38,7 @@ router.post('/', async (req, res) => {
   try {
     const locationData = await LibraryCard.create({
       // TODO: Add a comment describing where the value of `req.body.reader_id` comes from
+      //Since the model will create a unique UUID value by default, we just need to provide the 'id' of the Reader that will own this card
       reader_id: req.body.reader_id,
     });
     res.status(200).json(locationData);
